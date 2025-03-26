@@ -19,10 +19,7 @@ void findAvgTime(int bt[], int numProcesses) {
     for (int i = 0; i < numProcesses; i++) {
         total_wt += wt[i];
         total_tat += tat[i];
-        printf(" %d ", i + 1);          
-        printf("    %d ", bt[i]);      
-        printf("    %d ", wt[i]);     
-        printf("    %d\n", tat[i]);     
+        printf(" %d    %d    %d    %d\n", i + 1, bt[i], wt[i], tat[i]);
     }
     float avg_wt = (float)total_wt / numProcesses;
     float avg_tat = (float)total_tat / numProcesses;
@@ -30,8 +27,8 @@ void findAvgTime(int bt[], int numProcesses) {
     printf("Average Turnaround Time = %f\n", avg_tat);
 }
 int main() {
-    int burst_time[] = {10, 5, 8}; 
-    int numProcesses = sizeof(burst_time) / sizeof(burst_time[0]); 
-    findAvgTime(burst_time, numProcesses);
+    int bt[] = {10, 5, 8};
+    int numProcesses = sizeof(bt) / sizeof(bt[0]);
+    findAvgTime(bt, numProcesses);
     return 0;
 }
